@@ -1,0 +1,51 @@
+var request=new XMLHttpRequest();
+request.open('GET','https://restcountries.eu/rest/v2/all',true);
+request.send();
+request.onload = function(){
+    var data =JSON.parse(this.response);
+    console.log(data)
+    var ccy=data.filter((items)=>{
+        var ccy=data.currencies
+        var ccy1=ccy[0];
+        console.log(ccy1)
+        if(ccy.code=="USD"){
+            //console.log(data[i].name)
+        }
+    });//console.log(ccy)
+}
+
+
+
+
+var request=new XMLHttpRequest();
+request.open('GET','https://restcountries.eu/rest/v2/all',true);
+request.send();
+request.onload = function(){
+    var data =JSON.parse(this.response);
+    console.log(data)
+    for(i in data){
+        ccy=data[i].currencies.code
+        cur=ccy.code
+        console.log(ccy)
+        //console.log(cur)
+
+    }
+}
+-------------------------------------------------------------
+final
+
+var request=new XMLHttpRequest();
+request.open('GET','https://restcountries.eu/rest/v2/all',true);
+request.send();
+request.onload = function(){
+    var data =JSON.parse(this.response);
+    console.log(data)
+    data.filter((items)=>{
+        items.currencies.filter((ele)=>{
+            if(ele.code=="USD"){
+                console.log(items.name+":"+ ele.code)
+            }
+        });
+    });
+}
+

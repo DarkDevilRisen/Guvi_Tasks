@@ -1,0 +1,76 @@
+
+body {
+    text-align: justify;
+}
+
+.title {
+    text-align: center;
+    font-size: 129px;
+}
+
+.subtitle {
+    font-weight: bold;
+
+}
+
+hr {
+    margin-top: 5px;
+    margin-bottom: 0px;
+    border-width: 5px;
+    border-color: darkgray;
+}
+
+.card {
+    border: none;
+}
+
+.d1 {
+    float: left;
+    width: 33%;
+    height: 200px;
+    color: white;
+    text-align: center;
+    background-color: rgb(216, 206, 206);
+    /* margin: 1px; */
+    position: relative;
+
+}
+
+
+
+.pagenum {
+
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 500;
+    background-color: rgb(58, 57, 57);
+    color: azure;
+}
+
+
+#shape {
+    /* width: 10px;
+    height: 10px; */
+
+    width: 80px;
+    border-bottom: 30px solid red;
+    border-right: 5px solid transparent;
+    position: absolute;
+    top: -10px;
+}
+
+div.box {
+
+    height: 25px;
+    /* width: 80px; */
+    position: absolute;
+    top: -10px;
+    font-weight: bold;
+
+}

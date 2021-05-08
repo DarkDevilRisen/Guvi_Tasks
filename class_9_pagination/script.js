@@ -1,9 +1,10 @@
+//creating div and table
 var div = document.createElement('div')
 var table = document.createElement('table')
 table.setAttribute('style', 'border:1px solid black;width:800px;margin:15px')
 var thead = document.createElement('thead');
 var tr = document.createElement('tr');
-
+//adding table head data
 var th1 = createtrtd('th', 'ID');
 var th2 = createtrtd('th', 'Name');
 var th3 = createtrtd('th', 'Mail');
@@ -12,7 +13,7 @@ thead.append(tr);
 table.append(thead)
 div.append(table)
 document.body.append(div)
-
+//displaying first 10 row in table
 var tbody = document.createElement('tbody');
 var request = new XMLHttpRequest();
 request.open('GET', 'https://raw.githubusercontent.com/Rajavasanthan/jsondata/master/pagenation.json', true);
@@ -30,7 +31,7 @@ request.onload = function () {
         table.append(thead, tbody);
     }
 }
-
+//creating button usig function
 var div1 = document.createElement('div')
 div1.setAttribute('style','margin:15px;')
 var button = createButton('input', 'button', 1)
@@ -47,13 +48,14 @@ var button = createButton('input', 'button', "Start")
 var button = createButton('input', 'button', "End")
 var button = createButton('input', 'button', "Prev")
 
+//adding table data
 function createtrtd(elename, value = "") {
     var td = document.createElement(elename);
     td.setAttribute('style', 'border:1px solid black;padding:15px;');
     td.innerHTML = value;
     return td;
 }
-
+//function for button
 function createButton(ele, type = '', value = '', ) {
     var button = document.createElement(ele)
     button.type = type
@@ -62,7 +64,7 @@ function createButton(ele, type = '', value = '', ) {
     div1.append(button)
     document.body.append(div1)
     return button
-
+    //button navigation and to replacing the data using the funtion
     function page() {
         if (button.value == 1) {
             tbody.textContent = data(0, 10);
@@ -93,7 +95,7 @@ function createButton(ele, type = '', value = '', ) {
         }
     }
 }
-
+//function  to fetch the data from the URL
 function data(a, b) {
     var request = new XMLHttpRequest();
     request.open('GET', 'https://raw.githubusercontent.com/Rajavasanthan/jsondata/master/pagenation.json', true);

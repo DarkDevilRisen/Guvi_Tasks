@@ -5,6 +5,7 @@ submit.addEventListener('click', function (e) {
     address.push(address1.value);
     address.push(address2.value)
 
+    //Storing Gender Value
     var gender = document.getElementById("gender");
     var gendervalue
     for (let i = 0; i < gender.length; i++) {
@@ -12,7 +13,7 @@ submit.addEventListener('click', function (e) {
             gendervalue=gender[i].value
         }
     }
-
+    //Storing food Value in array
     var food = document.getElementsByName("food")
     var foodlist = []
     var foodcount = 0;
@@ -22,13 +23,13 @@ submit.addEventListener('click', function (e) {
             foodcount++
         }
     }
-
+    // contion for more than 2 check list
     if (foodlist.length >= 2) {
         var result = foodlist.join(",")
     } else {
         result = alert("Choose atleast 2 foods")
     }
-
+    
     createTable(fname.value, lname.value, address.join(","), pin.value, gender.value, result, state.value, country.value)
     fname.value = ""
     lname.value = ""
@@ -43,7 +44,7 @@ submit.addEventListener('click', function (e) {
 
 })
 
-
+// table to store the values given in form
 var fname = document.getElementById("fname")
 var lname = document.getElementById("lname")
 var address1 = document.getElementById("address1")
